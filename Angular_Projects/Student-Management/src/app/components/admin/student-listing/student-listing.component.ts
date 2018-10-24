@@ -27,9 +27,9 @@ export class StudentListingComponent implements OnInit {
   }
 
   //delete
-  deleteStudent(user:any){
+   deleteStudent(user:any){
    console.log('delete data of present onlick button', user); 
-  this.resData.deleteRecord(user.s_id).subscribe(responseData=>{
+   this.resData.deleteRecord(user.s_id).subscribe(responseData=>{
     console.log("STUDENT LIST RESPONSEDATA",responseData)
     this.dataDisplay = this.dataDisplay.filter(u => u !== user);
   })

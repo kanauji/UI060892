@@ -5,39 +5,39 @@
 <form name="form" [formGroup]='registerForm' (ngSubmit)="f.valid && onSubmit()">
     <div class="form-group">
         <label>Enrollment ID</label>
-        <input type="number" formControlName="enrollId" class="form-control" placeholder="Enrollment ID" [ngClass]="{ 'is-invalid': f.get('enrollId').touched && f.get('enrollId').invalid}" />
+        <input type="number" formControlName="s_id" class="form-control" placeholder="Enrollment ID" [ngClass]="{ 'is-invalid': f.get('s_id').touched && f.get('s_id').invalid}" />
         <div class="invalid-feedback">
             <div>Enrollment ID is required</div>
         </div>
     </div>
     <div class="form-group">
         <label>First Name</label>
-        <input type="text" formControlName="firstName" class="form-control" placeholder="Enter Firstname" [ngClass]="{ 'is-invalid': f.get('firstName').touched && f.get('firstName').invalid}" />
+        <input type="text" formControlName="s_firstname" class="form-control" placeholder="Enter Firstname" [ngClass]="{ 'is-invalid': f.get('s_firstname').touched && f.get('s_firstname').invalid}" />
         <div class="invalid-feedback">
                 <div>First Name is required</div>
         </div>
     </div>
     <div class="form-group">
         <label>Last Name</label>
-        <input type="text" formControlName="lastName" class="form-control" placeholder="Enter Lastname" [ngClass]="{ 'is-invalid': f.get('lastName').touched && f.get('lastName').invalid}" />
+        <input type="text" formControlName="s_lastname" class="form-control" placeholder="Enter Lastname" [ngClass]="{ 'is-invalid': f.get('s_lastname').touched && f.get('s_lastname').invalid}" />
         <div class="invalid-feedback">
                 <div>Last Name is required</div>
         </div>
     </div>
     <div class="form-group">
         <label>Email</label>
-        <input type="text" formControlName="email" class="form-control" placeholder="Enter Email" [ngClass]="{ 'is-invalid': f.get('email').touched && f.get('email').invalid}" />
-        <div *ngIf="f.get('email').touched && f.get('email').invalid" class="invalid-feedback">
-                <div *ngIf="f.get('email').errors.required">Email is required</div>
-                <div *ngIf="f.get('email').errors.email">Email must be a valid email address</div>
+        <input type="text" formControlName="s_email" class="form-control" placeholder="Enter Email" [ngClass]="{ 'is-invalid': f.get('s_email').touched && f.get('s_email').invalid}" />
+        <div *ngIf="f.get('s_email').touched && f.get('s_email').invalid" class="invalid-feedback">
+                <div *ngIf="f.get('s_email').errors.required">Email is required</div>
+                <div *ngIf="f.get('s_email').errors.email">Email must be a valid email address</div>
             </div>
     </div>
     <div class="form-group">
         <label>Password</label>
-        <input type="password" formControlName="password" placeholder="Enter 6-digit password" class="form-control" [ngClass]="{ 'is-invalid': f.get('password').touched && f.get('password').invalid}" />
-        <div *ngIf="f.get('password').touched && f.get('password').invalid" class="invalid-feedback">
-                <div *ngIf="f.get('password').errors.required">Password is required</div>
-                <div *ngIf="f.get('password').errors.minlength">Password must be at least 6 characters</div>
+        <input type="password" formControlName="s_password" placeholder="Enter 6-digit password" class="form-control" [ngClass]="{ 'is-invalid': f.get('s_password').touched && f.get('s_password').invalid}" />
+        <div *ngIf="f.get('s_password').touched && f.get('s_password').invalid" class="invalid-feedback">
+                <div *ngIf="f.get('s_password').errors.required">Password is required</div>
+                <div *ngIf="f.get('s_password').errors.minlength">Password must be at least 6 characters</div>
         </div>
     </div>
     <div class="form-group">

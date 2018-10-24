@@ -21,16 +21,17 @@ connection.connect(function(err){
   app.post('/register',function(req,res){ 
 //console.log("Request data",req.body)
   var box=req.body;
-  var parameter=[box.enrollId,box.firstName,box.lastName,box.email,box.password];
+  var parameter=[box.s_id,box.s_firstname,box.s_lastname,box.s_email,box.s_password];
   console.log("present parameters show",parameter)
 // if connection is successful
   connection.query('insert into student_table (s_id,s_firstname,s_lastname,s_email,s_password) values (?,?,?,?,?)',parameter,function(err,result){
 // if any error while executing above query, throw error
     if(err)throw err
-// if there is no error, you have the result
     console.log(result)
     var text='{"responseCode":"000","responseMessage":"hey, Input data is storing"}';
-    res.send(text);
+    text=JSON.parse(text);
+    console.log("text in post",text)
+    res.send(JSON.stringify(text));
 //console.log("text::",text)
 //res.send('Hello,'+result[0].s_lastname);
   })
@@ -42,7 +43,7 @@ app.get('/registerFetch',function(req,res){
   connection.query('SELECT * FROM student_table', function (err, result){
     if (err) throw err;
     console.log(result);
-    res.send(result)
+    res.send(JSON.stringify(result));
   });
 });
 // crud Delete record
