@@ -1,0 +1,7 @@
+.studentListing{ margin-top: 10%;margin-bottom: 10%;}
+.studentListing .addStudent{    float: right;margin: 10px 0;}
+@media (max-width:767px){
+.studentListing .table thead th{font-size:12px;padding: 5px;}
+.studentListing .table tbody td{font-size:12px;padding: 5px;}
+.studentListing .list_btn1{font-size: 12px;padding: 2px 5px;}
+}

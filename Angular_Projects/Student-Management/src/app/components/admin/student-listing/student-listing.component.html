@@ -1,0 +1,34 @@
+<div class="container studentListing">
+  <h2>STUDENT DATA</h2>
+  <p>All Enrolled students list details:</p> 
+  <div class="addStudent"><button type="button" class="btn btn-info list_btn1" (click)="addStudent()">ADD</button></div>
+  <div class="table-responsive">         
+  <table class="table table-bordered">
+    <thead class="thead-light">
+      <tr>
+        <th>Sr.No</th>
+        <th>Enroll Id</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of dataDisplay | paginate:{itemsPerPage:4,currentPage:p} let i=index">
+        <td>{{4*(p-1)+i+1}}</td>
+        <td>{{data.s_id}}</td>
+        <td>{{data.s_firstname}}</td>
+        <td>{{data.s_lastname}}</td>
+        <td>{{data.s_email}}</td>
+        <td><button type="button" class="btn btn-info list_btn1" (click)="deleteStudent(data)">DELETE</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <!--pagination-->
+  <div class="paginateDiv"> 
+    <pagination-controls (pageChange)="p = $event" ></pagination-controls>
+  </div>
+</div>

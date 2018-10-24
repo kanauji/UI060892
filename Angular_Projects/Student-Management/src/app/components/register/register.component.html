@@ -1,0 +1,50 @@
+<div class="container-fluid registerPage">
+    <div class="row">
+        <div class="col-sm-12 col-md-6 mx-auto centerBox">
+<h2>Register with your unique Enroll ID</h2>
+<form name="form" [formGroup]='registerForm' (ngSubmit)="f.valid && onSubmit()">
+    <div class="form-group">
+        <label>Enrollment ID</label>
+        <input type="number" formControlName="enrollId" class="form-control" placeholder="Enrollment ID" [ngClass]="{ 'is-invalid': f.get('enrollId').touched && f.get('enrollId').invalid}" />
+        <div class="invalid-feedback">
+            <div>Enrollment ID is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>First Name</label>
+        <input type="text" formControlName="firstName" class="form-control" placeholder="Enter Firstname" [ngClass]="{ 'is-invalid': f.get('firstName').touched && f.get('firstName').invalid}" />
+        <div class="invalid-feedback">
+                <div>First Name is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" formControlName="lastName" class="form-control" placeholder="Enter Lastname" [ngClass]="{ 'is-invalid': f.get('lastName').touched && f.get('lastName').invalid}" />
+        <div class="invalid-feedback">
+                <div>Last Name is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input type="text" formControlName="email" class="form-control" placeholder="Enter Email" [ngClass]="{ 'is-invalid': f.get('email').touched && f.get('email').invalid}" />
+        <div *ngIf="f.get('email').touched && f.get('email').invalid" class="invalid-feedback">
+                <div *ngIf="f.get('email').errors.required">Email is required</div>
+                <div *ngIf="f.get('email').errors.email">Email must be a valid email address</div>
+            </div>
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input type="password" formControlName="password" placeholder="Enter 6-digit password" class="form-control" [ngClass]="{ 'is-invalid': f.get('password').touched && f.get('password').invalid}" />
+        <div *ngIf="f.get('password').touched && f.get('password').invalid" class="invalid-feedback">
+                <div *ngIf="f.get('password').errors.required">Password is required</div>
+                <div *ngIf="f.get('password').errors.minlength">Password must be at least 6 characters</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button [disabled]="!f.valid" class="btn btn-primary">Register</button>
+        <a routerLink="/login" class="btn btn-link">Cancel</a>
+    </div>
+</form>
+</div>
+</div>
+</div>
